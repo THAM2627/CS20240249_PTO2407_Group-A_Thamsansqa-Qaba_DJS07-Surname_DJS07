@@ -20,5 +20,9 @@ React.useEffect(()=> {
 
 function getMemeImage() {
     const randomNumber = Math.floor(Math.random() * allMemes.length);
-    const url = allMemes[randomNumber].url;(prevMeme)
+    const url = allMemes[randomNumber].url;(prevMeme=>({
+        ...prevMeme,
+        randomImage: url
+    }))
 }
+
