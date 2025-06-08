@@ -11,12 +11,12 @@ export default function Meme() {
 const [allMemes, setAllMemes] = React.useState([])
 
 React.useEffect(()=> {
-    async function getMemes() {
+    async function getMeme() {
         const res = await fetch("https://api.imgflip.com/get_memes");
         const data = await res.json();setAllMemes(data.data.memes);
     }
-    getMemes()
-})
+    getMeme()
+
 
 function getMemeImage() {
     const randomNumber = Math.floor(Math.random() * allMemes.length);
@@ -34,3 +34,12 @@ function handleChange(event) {
     }))
 }
 
+return (
+    <main>
+
+       <div className="form">
+        <input type="text" placeholder="Top text" className="form--input" name="topText" value={meme.topText} onChange={handleChange}/>
+        
+        </div> 
+        )
+}
