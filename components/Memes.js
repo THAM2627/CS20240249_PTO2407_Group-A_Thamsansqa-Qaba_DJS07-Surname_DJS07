@@ -26,3 +26,11 @@ function getMemeImage() {
     }))
 }
 
+function handleChange(event) {
+    const {name, value} = event.target;
+    setMeme(prevMeme=>({
+        ...prevMeme,
+        [name]: value
+    }))
+}
+
